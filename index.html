@@ -8,34 +8,51 @@
 </head>
 <body>
   <main>
-    <h1>Hi, I’m Parasaran</h1>
+    <p class="prompt">$ whoami</p>
+    <h1 id="typing"></h1>
 
-    <p>
-      I’m a Senior Software Engineer who enjoys building products that actually get used — not just shipped.
+    <p class="intro">
+      I build systems that don't just work — they scale, generate revenue, and solve real problems.
     </p>
 
-    <p>
-      Over the past 4+ years at Zenoti, I’ve worked on a global SaaS platform serving 10,000+ businesses across 50+ countries.
-    </p>
+    <section>
+      <h2>What I've done</h2>
+      <ul>
+        <li>Built a $1M+ ARR feature from scratch</li>
+        <li>Designed AI-powered medical summarization pipelines</li>
+        <li>Migrated critical systems across cloud providers with zero downtime</li>
+        <li>Owned and scaled 10+ production codebases</li>
+      </ul>
+    </section>
 
-    <p>
-      One of my key projects is an AI-powered medical summarization system that converts real consultations into structured clinical notes.
-    </p>
+    <section>
+      <h2>What I'm looking for</h2>
+      <p>
+        Remote engineering roles where I can work on backend systems, distributed architecture,
+        or AI-integrated products with real-world impact.
+      </p>
+    </section>
 
-    <ul>
-      <li>Built a $1M+ ARR feature from scratch</li>
-      <li>Led cloud migrations with zero downtime</li>
-      <li>Owned 10+ codebases across web & mobile</li>
-    </ul>
-
-    <p>
-      I’m looking for a remote role where I can build high-impact backend and AI-driven systems.
-    </p>
-
-    <p>
-      <a href="https://github.com/Parasaran-Python">GitHub</a> ·
+    <section class="links">
+      <a href="https://github.com/Parasaran-Python">GitHub</a>
       <a href="https://www.linkedin.com/in/parasaran-vedanarayanan-4390bb1bb/">LinkedIn</a>
-    </p>
+    </section>
   </main>
+
+  <script>
+    const text = "Hi, I'm Parasaran";
+    let i = 0;
+    const speed = 50;
+
+    function type() {
+      if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      }
+    }
+
+    type();
+  </script>
 </body>
 </html>
