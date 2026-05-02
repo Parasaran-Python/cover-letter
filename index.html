@@ -14,12 +14,12 @@
   <main>
     <div class="hero">
       <div class="avatar-wrap">
-        <div class="avatar-placeholder" title="Photo coming soon">P</div>
+        <img src="photo.jpeg" alt="Parasaran" class="avatar-img" />
       </div>
       <div class="hero-text">
         <p class="prompt">$ whoami</p>
         <h1 id="typing"></h1>
-        <p class="title-label">Senior Software Engineer · Backend &amp; AI Systems</p>
+        <p class="title-label">Senior Software Engineer · Fullstack &amp; AI Systems</p>
       </div>
     </div>
 
@@ -62,9 +62,36 @@
     </section>
 
     <section class="links">
-      <a href="https://github.com/Parasaran-Python">GitHub</a>
-      <a href="https://www.linkedin.com/in/parasaran-vedanarayanan-4390bb1bb/">LinkedIn</a>
-      <a href="mailto:parasaran@parasaran.in">Email</a>
+      <div class="link-row">
+        <a href="https://github.com/Parasaran-Python" target="_blank" rel="noopener">
+          <span class="link-label">GitHub</span>
+          <span class="link-url">github.com/Parasaran-Python</span>
+        </a>
+        <button class="copy-btn" data-copy="https://github.com/Parasaran-Python" title="Copy link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <div class="link-row">
+        <a href="https://www.linkedin.com/in/parasaran-vedanarayanan-4390bb1bb/" target="_blank" rel="noopener">
+          <span class="link-label">LinkedIn</span>
+          <span class="link-url">linkedin.com/in/parasaran-vedanarayanan-4390bb1bb</span>
+        </a>
+        <button class="copy-btn" data-copy="https://www.linkedin.com/in/parasaran-vedanarayanan-4390bb1bb/" title="Copy link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <div class="link-row">
+        <a href="mailto:v.parasaran@gmail.com">
+          <span class="link-label">Email</span>
+          <span class="link-url">v.parasaran@gmail.com</span>
+        </a>
+        <button class="copy-btn" data-copy="v.parasaran@gmail.com" title="Copy email">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
     </section>
   </main>
 
@@ -82,6 +109,22 @@
     }
 
     type();
+
+    // Copy buttons
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const text = btn.dataset.copy;
+        navigator.clipboard.writeText(text).then(() => {
+          const span = btn.querySelector('.copy-text');
+          span.textContent = 'Copied!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            span.textContent = 'Copy';
+            btn.classList.remove('copied');
+          }, 2000);
+        });
+      });
+    });
   </script>
 </body>
 </html>

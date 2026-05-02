@@ -40,6 +40,14 @@ body {
   flex-shrink: 0;
 }
 
+.avatar-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+}
+
 .avatar-placeholder {
   width: 72px;
   height: 72px;
@@ -195,26 +203,82 @@ strong {
 /* Links */
 .links {
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
   margin-top: 50px;
 }
 
-.links a {
-  text-decoration: none;
-  color: var(--accent);
-  font-size: 0.88rem;
-  font-weight: 500;
+.link-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
   border: 1px solid var(--border);
-  padding: 8px 18px;
-  border-radius: 6px;
-  transition: border-color 0.2s, background 0.2s;
-  letter-spacing: 0.02em;
+  border-radius: 8px;
+  padding: 12px 16px;
+  transition: border-color 0.2s;
 }
 
-.links a:hover {
+.link-row:hover {
   border-color: var(--accent);
-  background: var(--accent-soft);
+}
+
+.link-row a {
+  text-decoration: none;
+  flex: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  min-width: 0;
+}
+
+.link-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  flex-shrink: 0;
+  width: 64px;
+}
+
+.link-url {
+  font-size: 0.88rem;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.link-row:hover .link-url {
+  color: var(--text);
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-family: 'Inter', sans-serif;
+  padding: 4px 10px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.copy-btn:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.copy-btn.copied {
+  color: var(--green);
+  border-color: var(--green);
 }
 
 /* Responsive */
