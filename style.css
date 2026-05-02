@@ -30,41 +30,36 @@ body {
 
 /* Hero */
 .hero {
-  display: flex;
-  align-items: center;
-  gap: 24px;
   margin-bottom: 40px;
 }
 
-.avatar-wrap {
-  flex-shrink: 0;
+.hero-photo-wrap {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
 }
 
-.avatar-img {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
+.hero-photo {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 2px solid var(--border);
+  object-position: center top;
+  display: block;
+  filter: brightness(0.92) saturate(0.9);
 }
 
-.avatar-placeholder {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--purple));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #fff;
-  border: 2px solid var(--border);
-}
-
-.hero-text {
-  flex: 1;
+.hero-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(10, 14, 23, 0.6) 100%
+  );
 }
 
 .prompt {
