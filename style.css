@@ -1,45 +1,234 @@
+:root {
+  --bg: #0a0e17;
+  --surface: #111827;
+  --border: #1e2d40;
+  --text: #d1d9e6;
+  --muted: #6b7a8d;
+  --accent: #3b82f6;
+  --accent-soft: #1d3a6e;
+  --green: #10b981;
+  --yellow: #f59e0b;
+  --purple: #8b5cf6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background: #0d1117;
-  color: #c9d1d9;
-  font-family: system-ui, sans-serif;
-  max-width: 720px;
-  margin: 80px auto;
-  padding: 0 20px;
-  line-height: 1.7;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+  line-height: 1.75;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.avatar-wrap {
+  flex-shrink: 0;
+}
+
+.avatar-placeholder {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--purple));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  border: 2px solid var(--border);
+}
+
+.hero-text {
+  flex: 1;
 }
 
 .prompt {
-  color: #58a6ff;
-  font-family: monospace;
-  margin-bottom: 10px;
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  margin-bottom: 6px;
+  letter-spacing: 0.05em;
 }
 
 h1 {
-  font-size: 2.4rem;
-  margin-bottom: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+  min-height: 2.4rem;
+}
+
+h1::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  color: var(--accent);
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.title-label {
+  font-size: 0.82rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-top: 6px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+/* Intro */
+.intro {
+  font-size: 1.05rem;
+  color: var(--text);
+  border-left: 3px solid var(--accent);
+  padding-left: 18px;
+  margin-bottom: 48px;
+  font-weight: 300;
+}
+
+/* Sections */
+section {
+  margin-bottom: 44px;
 }
 
 h2 {
-  margin-top: 40px;
-  font-size: 1.4rem;
-  color: #58a6ff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
 }
 
+/* Impact list */
 ul {
-  padding-left: 20px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-.intro {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
+ul li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
 }
 
+.tag {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Stack grid */
+.stack-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stack-group {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 0.9rem;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.stack-group:last-child {
+  border-bottom: none;
+}
+
+.stack-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Links */
 .links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
   margin-top: 50px;
 }
 
 .links a {
-  margin-right: 20px;
   text-decoration: none;
-  color: #58a6ff;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: border-color 0.2s, background 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.links a:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .stack-group {
+    grid-template-columns: 90px 1fr;
+  }
 }

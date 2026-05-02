@@ -3,46 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Parasaran</title>
+  <title>Parasaran — Senior Software Engineer</title>
+  <meta name="description" content="Senior Software Engineer specialising in backend systems, distributed architecture, and AI-integrated products." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main>
-    <p class="prompt">$ whoami</p>
-    <h1 id="typing"></h1>
+    <div class="hero">
+      <div class="avatar-wrap">
+        <div class="avatar-placeholder" title="Photo coming soon">P</div>
+      </div>
+      <div class="hero-text">
+        <p class="prompt">$ whoami</p>
+        <h1 id="typing"></h1>
+        <p class="title-label">Senior Software Engineer · Backend &amp; AI Systems</p>
+      </div>
+    </div>
 
     <p class="intro">
       I build systems that don't just work — they scale, generate revenue, and solve real problems.
+      Five years of production engineering across SaaS, cloud infrastructure, and AI-integrated products.
     </p>
 
     <section>
-      <h2>What I've done</h2>
+      <h2>Impact</h2>
       <ul>
-        <li>Built a $1M+ ARR feature from scratch</li>
-        <li>Designed AI-powered medical summarization pipelines</li>
-        <li>Migrated critical systems across cloud providers with zero downtime</li>
-        <li>Owned and scaled 10+ production codebases</li>
+        <li><span class="tag">Product</span> Built a camera and photo module that contributed to <strong>$1M+ ARR</strong> — owned end-to-end from architecture to release</li>
+        <li><span class="tag">AI</span> Designed an AI-powered medical documentation pipeline using AWS Lambda, ElevenLabs, and Claude Sonnet — reducing clinician note time significantly</li>
+        <li><span class="tag">Cloud</span> Led a critical AWS → Azure migration with <strong>zero downtime</strong> across live production systems</li>
+        <li><span class="tag">Scale</span> Owned and maintained 10+ production codebases across a global SaaS platform serving enterprise clients</li>
+        <li><span class="tag">Recognition</span> 2nd place, internal AI Hackathon — built a working AI product under time constraints</li>
       </ul>
     </section>
 
     <section>
-      <h2>What I'm looking for</h2>
-      <p>
-        Remote engineering roles where I can work on backend systems, distributed architecture,
-        or AI-integrated products with real-world impact.
-      </p>
+      <h2>Stack</h2>
+      <div class="stack-grid">
+        <div class="stack-group">
+          <span class="stack-label">Languages</span>
+          <span>Node.js · TypeScript · Python · Go · Java</span>
+        </div>
+        <div class="stack-group">
+          <span class="stack-label">Cloud</span>
+          <span>AWS · Azure · Cloudflare</span>
+        </div>
+        <div class="stack-group">
+          <span class="stack-label">AI / ML</span>
+          <span>LLM integration · ONNX Runtime · Computer Vision</span>
+        </div>
+        <div class="stack-group">
+          <span class="stack-label">Infra</span>
+          <span>Docker · Serverless · Distributed Systems</span>
+        </div>
+      </div>
     </section>
 
     <section class="links">
       <a href="https://github.com/Parasaran-Python">GitHub</a>
       <a href="https://www.linkedin.com/in/parasaran-vedanarayanan-4390bb1bb/">LinkedIn</a>
+      <a href="mailto:parasaran@parasaran.in">Email</a>
     </section>
   </main>
 
   <script>
     const text = "Hi, I'm Parasaran";
     let i = 0;
-    const speed = 50;
+    const speed = 60;
 
     function type() {
       if (i < text.length) {
